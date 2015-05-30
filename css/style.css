@@ -1,0 +1,290 @@
+  body {
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  #GraphsDiv {
+    min-height: 88vh;
+    width: 100vw;
+  }
+  #svgDivBubble {
+    display: none;
+    margin: auto;
+    width: 80vw;
+    max-width: 80vw;
+    min-height: 525px;
+    text-align: center;
+  }
+  #bgCont {
+    height: 600px;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+    display: none;
+  }
+  #DoctorPadBackground {
+    position: absolute;
+    z-index: -1;
+    height: 90%;
+    width: 81%;
+  }
+  #DoctorPadContainer {
+    margin: auto;
+    height: 90%;
+    width: 80vw;
+    display: none;
+    max-width: 80vw;
+  }
+  #TitleIcon {
+    margin: auto;
+    height: 8%;
+    width: 90%;
+    text-Align: Center;
+    color: #006699;
+  }
+  #DoctorPadRow {
+    /*border-radius: 25px;*/
+    border: 15px solid #FFCC33;
+    white-space: nowrap;
+    max-width: 99%;
+    padding: 2%;
+    margin: auto;
+    height: 80%;
+    width: 90%;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  .SympColumns {
+    width: 29%;
+    height: 100%;
+    display: inline-block;
+    background-color: #AFEEEE;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 2%;
+    white-space: normal;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .SympTypeTitle {
+    height: 11%;
+    width: 100%;
+    padding: 0.5%;
+    text-align: center;
+    color: #006699;
+    font-size: 20px;
+    word-break: break-word;
+  }
+  .SympDetails {
+    position: relative;
+    height: 86%;
+    width: 100%;
+    padding: 0.5%;
+    text-align: left;
+    font-size: 20px;
+  }
+  #questionsDiv {
+    height: 100vh;
+    width: 100vw;
+  }
+  #qANDa {
+    width: 70%;
+    height: 50%;
+    vertical-align: top;
+    display: inline-block;
+    margin: auto;
+    position: fixed;
+    right: 5%;
+    text-align: center;
+  }
+  #fullQ {
+    position: relative;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 75%;
+    min-height: 130px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #fff;
+    border: 8px solid #191E22;
+  
+    /*-webkit-border-radius: 30px;*/
+    /*-moz-border-radius: 30px;*/
+    /*border-radius: 30px;*/
+    /*-webkit-box-shadow: 2px 2px 4px #888;*/
+    /*-moz-box-shadow: 2px 2px 4px #888;*/
+    /*box-shadow: 2px 2px 4px #888;*/
+  }
+  #fullQ::before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -50px;
+    top: 70px;
+    border: 25px solid;
+    border-color: transparent #191E22 #191E22 transparent;
+  }
+  #fullQ::after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -28px;
+    top: 78px;
+    border: 15px solid;
+    border-color: transparent #fff #fff transparent;
+  }
+  #q_root {
+    min-width: 70%;
+    font-size: 25px;
+    padding: 0px;
+    margin: 2%;
+    height: 30px;
+  }
+  #question {
+    font-size: 40px;
+    min-width: 70%;
+    margin: 4% 2% 2% 2%;
+  }
+  #answer, #answerg {
+    width: 90%;
+    margin: auto;
+    display: table;
+    vertical-align: middle;
+  }
+  
+  
+  #interviewer {
+    position: absolute;
+    left: 10%;
+    display: inline-block;
+    width: 13vw;
+    margin: 40px 40px 40px 0px;
+  }
+
+  input[type=radio] {
+    display: none;
+    margin: 10px;
+    color: #000000;
+  }
+  
+  .row {
+    margin-right:-15px;
+    margin-left:-15px;
+  }
+  
+  .col-md-4 {
+    width: 30%;
+    display: inline-block;
+  }
+  /*
+  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+  Add some margin, padding to label
+*/
+  
+  input[type=radio] + label {
+    display: table-cell;
+    margin: -2px;
+   
+    background-color: #29bf9a;
+    color: #000000;
+    border: solid 2px;
+    border-color: #29bf9a;
+    /*border-radius: 8px;*/
+    /*box-shadow: 0 4px 0 #19735C;*/
+    text-align: center;
+    vertical-align: middle;
+    height: 70px;
+    width: 100px;
+    word-wrap: break-word;
+  }
+  
+  input[type=radio] + label:active {
+  /*box-shadow: 0 2px 0 #FF731A;*/
+  transform: translateY(3px);
+}
+  
+  input[type=radio] + label:hover, input[type=radio]:checked + label {
+    background-color: #FF9900;
+    border-color: #FF9900;
+    /*box-shadow: 0 4px 0 #FF731A;*/
+    cursor: hand;
+  }
+
+
+  input {
+    height: 30px;
+    vertical-align: middle;
+  }
+  button {
+    background: #69A0D1;
+    /*border-radius: 10px;*/
+    color: #000000;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    margin: 0 auto;
+  }
+  button:hover {
+    background: #75caff;
+    text-decoration: none;
+    cursor: hand;
+  }
+  #ErrorMsg {
+    font-size: 14px;
+    color: red;
+  }
+  #BtnsDiv {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #log{
+    width: 350px;
+    float: right;
+    margin-right: 5px;
+  }
+  
+  .checkboxes {
+    padding: 0;
+    vertical-align: -2px;
+    height: 30px;
+    font-size: 16px;
+    /* All browsers except webkit*/
+    transform: scale(1.5);
+
+    /* Webkit browsers*/
+    -webkit-transform: scale(1.5);
+  }
+  .checkbox-label input[type=checkbox] {
+    position: relative;
+    vertical-align: middle;
+    bottom: 1px;
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);*/
+    /*border-radius: 10px;*/
+  }
+  ::-webkit-scrollbar-thumb {
+    /*border-radius: 10px;*/
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);*/
+  }
+  
+  #pick_interviewer{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.avataricons{
+  display: inline;
+}

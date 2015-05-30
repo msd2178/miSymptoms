@@ -1,0 +1,149 @@
+<html>
+
+<head>
+	<title> mi.Symptoms </title>
+	<!--<link rel="stylesheet" href="./css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.canvasjs.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="./js/d3.min.js"></script>
+	<script type="text/javascript" src="./js/mycode.js"></script>
+</head>
+
+<body style="background-color: #29bf9a;">
+	<div class="container">
+      <div class="row" id="pick_interviewer">
+       <p><strong>First things first, <br> let's pick your interviewer</strong></p>
+      </div>
+      <br>
+      <br>
+      <div class="row avataricons">
+        <div class="col-md-4">
+          <img src="./images/avatars/doctor.png" class="avatars" width="150" height="150" id="doctor"></a>
+        </div>
+        <div class="col-md-4">
+          <img src="./images/avatars/black_woman.png" class="avatars" width="150" height="150" id="black_woman"></a>
+        </div>
+        <div class="col-md-4">
+          <img src="./images/avatars/hispanic_man.png" class="avatars" width="150" height="150" id="hispanic_man"></a>
+        </div>
+      </div>
+      <div class="row avataricons">
+        <div class="col-md-4">
+          <img src="./images/avatars/oldlady.png" class="avatars" width="150" height="150" id="oldlady.png"></a>
+        </div>
+        <div class="col-md-4">
+          <img src="./images/avatars/viking.png" class="avatars" width="150" height="150" id="viking.png"></a>
+        </div>
+        <div class="col-md-4">
+          <img src="./images/avatars/white_woman.png" class="avatars" width="150" height="150" id="white_woman"></a>
+        </div>
+      </div>
+    </div>
+	
+	
+	
+	
+	<div id="main" style="display: none;">
+	<div id="questionsDiv">
+		<br>
+		<br>
+		<div id="interviewer">
+			<img src="" id="myAvatar" style="width: 100%;">
+		</div>
+
+		<div id="qANDa">
+			<div id="fullQ">
+				<div id="q_root">In the past week how bothered were you by...</div>
+				<div id="question">pain?</div>
+			</div><br /><br /><br /><br />
+
+			<div id="answer">
+				<input type="radio" name="option" id="radio0" value="0">
+				<label for="radio0">I did not have this symptom</label>&nbsp;&nbsp;
+				<input type="radio" name="option" id="radio1" value="1">
+				<label for="radio1">Not at all</label>&nbsp;&nbsp;
+				<input type="radio" name="option" id="radio2" value="2">
+				<label for="radio2">Slightly</label>&nbsp;&nbsp;
+				<input type="radio" name="option" id="radio3" value="3">
+				<label for="radio3">Moderately</label>&nbsp;&nbsp;
+				<input type="radio" name="option" id="radio4" value="4">
+				<label for="radio4">Quite a bit</label>&nbsp;&nbsp;
+				<input type="radio" name="option" id="radio5" value="5">
+				<label for="radio5">Extremely</label>
+			</div>
+			<div id="answerg" style="display:none;">
+				<input type="radio" name="goption" id="gradio1" value="1">
+				<label for="gradio1">Poor</label>&nbsp;&nbsp;
+				<input type="radio" name="goption" id="gradio2" value="2">
+				<label for="gradio2">Fair</label>&nbsp;&nbsp;
+				<input type="radio" name="goption" id="gradio3" value="3">
+				<label for="gradio3">Good</label>&nbsp;&nbsp;
+				<input type="radio" name="goption" id="gradio4" value="4">
+				<label for="gradio4">Very Good</label>&nbsp;&nbsp;
+				<input type="radio" name="goption" id="gradio5" value="5">
+				<label for="gradio5">Excellent</label>
+			</div>
+
+			<p id="ErrorMsg" style="visibility: hidden;">Please select an option</p><br /><br /><br />
+			
+			<div style="text-align: center;">
+				<button id="BackBtn" onclick="backFunction()">
+					<< Back</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button id="NextBtn" onclick="myFunction()">Next >></button>
+			</div>
+		</div>
+	</div>
+
+	<div id = "log">
+	<button type="button" style="display: none;" id="PrintReport">Print Report</button>
+		<button type="button" style="display: none;" id="logout">Logout</button>
+	
+	</div>
+
+	<div id="GraphTitle" style="display: none; margin-left: 150px; text-align: center; padding: 2px; font-size: 20px">
+		<img src="./images/avatars/doctor.png" class="avatars" width="100" height="100" id="doctor">
+		<span style="display: table-cell; verticalAlign: middle; "></span>
+	</div>
+	<div id="GraphsDiv" style="display: none;">
+		<div id="svgDivBubble"></div>
+
+		<div id="DoctorPadContainer">
+			<div id="DoctorPadRow">
+				<div class="SympColumns" id="PhysicalColumn">
+					<div class="SympTypeTitle">
+						<span> Physical Symptoms 	</span>
+					</div>
+					<div class="SympDetails" id="physical"></div>
+				</div>
+				<div class="SympColumns" id="MentalColumn">
+					<div class="SympTypeTitle">
+						<span> <br>Thoughts and feelings</span>
+					</div>
+					<div class="SympDetails" id="mental"></div>
+				</div>
+				<div class="SympColumns" id="SocialColumn">
+					<div class="SympTypeTitle">
+						<span> <br>Social</span>
+					</div>
+					<div class="SympDetails" id="social"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="chartContainer" style="min-height: 400px; width: 80vw; display: none; margin: auto;"></div>
+	</div> <!-- End of "GraphsDiv" -->
+
+
+	<div id="BtnsDiv">
+		<button type="button" style="display: none;" id="GetGraphs">Symptoms summary</button>
+		<button type="button" style="display: none;" id="generateDocPad">Most bothersome symptoms</button>
+		<!--<button type="button" style="display: none;" id="generateLineGraph">Historical Symptom Variation</button>-->
+		
+	</div>
+ <!--End of div "main" -->
+</body>
+
+</html>
